@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Tony Prem Service Station</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header styles */
+        header {
+            background-color: #1e3a8a;
+            color: white;
+            padding: 15px 0;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .logo span {
+            color: #ff9933;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #ff9933;
+        }
+        
+        /* Page header */
+        .page-header {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/api/placeholder/1200/300');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .page-header h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        /* Our story section */
+        .our-story {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .story-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .story-image {
+            flex: 1;
+        }
+        
+        .story-image img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        
+        .story-text {
+            flex: 1;
+        }
+        
+        .story-text h2 {
+            font-size: 36px;
+            color: #1e3a8a;
+            margin-bottom: 20px;
+        }
+        
+        .story-text p {
+            margin-bottom: 20px;
+        }
+        
+        /* Mission section */
+        .mission {
+            padding: 80px 0;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+        
+        .mission h2 {
+            font-size: 36px;
+            color: #1e3a8a;
+            margin-bottom: 20px;
+        }
+        
+        .mission p {
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .value-item {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .value-icon {
+            font-size: 40px;
+            color: #ff9933;
+            margin-bottom: 20px;
+        }
+        
+        .value-item h3 {
+            color: #1e3a8a;
+            margin-bottom: 15px;
+        }
+        
+        /* Team section */
+        .team {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: #1e3a8a;
+        }
+        
+        .section-title p {
+            color: #777;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .team-member {
+            text-align: center;
+        }
+        
+        .team-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            overflow: hidden;
+            background-color: #f5f5f5;
+        }
+        
+        .team-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .team-name {
+            font-size: 20px;
+            font-weight: bold;
+            color: #1e3a8a;
+            margin-bottom: 5px;
+        }
+        
+        .team-role {
+            color: #777;
+            margin-bottom: 15px;
+        }
+        
+        /* Certifications section */
+        .certifications {
+            padding: 80px 0;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+        
+        .certifications h2 {
+            font-size: 36px;
+            color: #1e3a8a;
+            margin-bottom: 20px;
+        }
+        
+        .certifications p {
+            max-width: 800px;
+            margin: 0 auto 50px;
+        }
+        
+        .cert-logos {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        
+        .cert-logo {
+            width: 150px;
+            height: 150px;
+            background-color: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cert-logo img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: 80px 0;
+            background-color: #1e3a8a;
+            color: white;
+            text-align: center;
+        }
+        
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #ff9933;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #e67e22;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #0f172a;
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #ff9933;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: #ff9933;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid #2d3748;
+            padding-top: 20px;
+            color: #ddd;
+            font-size: 14px;
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 15px;
+            }
+            
+            .story-content {
+                flex-direction: column;
+            }
+            
+            .team-image {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .page-header h1 {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">Tony <span>Prem</span> Service Station</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>About Us</h1>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="our-story">
+        <div class="container">
+            <div class="story-content">
+                <div class="story-image">
+                    <img src="/api/placeholder/600/400" alt="Tony Prem Service Station History">
+                </div>
+                <div class="story-text">
+                    <h2>Our Story</h2>
+                    <p>Tony Prem Service Station was founded in 1998 by Tony Prem, a master mechanic with over 15 years of experience working in dealerships and independent shops. Tony had a vision to create a service station that combined technical expertise with honest, transparent customer service.</p>
+                    <p>What began as a small three-bay garage has grown into a full-service automotive center with state-of-the-art diagnostic equipment and a team of certified technicians. Throughout our growth, we've remained true to Tony's original vision: providing quality repairs at fair prices with a focus on building long-term relationships with our customers.</p>
+                    <p>Today, we proudly serve thousands of satisfied customers in the community. Many of our first-time customers become lifelong clients, trusting us with all their vehicles for years to come. We believe this loyalty stems from our unwavering commitment to integrity, quality workmanship, and exceptional service.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission">
+        <div class="container">
+            <h2>Our Mission</h2>
+            <p>To provide honest, reliable, and high-quality automotive repair and maintenance services that ensure the safety and satisfaction of our customers while building long-term relationships based on trust and transparency.</p>
+            
+            <div class="values-grid">
+                <div class="value-item">
+                    <div class="value-icon">🔍</div>
+                    <h3>Integrity</h3>
+                    <p>We are committed to honest recommendations and transparent pricing. We'll never suggest unnecessary repairs or services.</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">🏆</div>
+                    <h3>Excellence</h3>
+                    <p>We strive for excellence in every repair and service we provide, using quality parts and the latest techniques.</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">👥</div>
+                    <h3>Customer Focus</h3>
+                    <p>We put our customers first, taking the time to explain issues, answer questions, and provide options.</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">🔧</div>
+                    <h3>Expertise</h3>
+                    <p>Our team maintains up-to-date knowledge and skills through ongoing training and certification.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team">
+        <div class="container">
+            <div class="section-title">
+                <h2>Meet Our Team</h2>
+                <p>Our team of experienced professionals is dedicated to providing you with the highest quality service</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-image">
+                        <img src="/api/placeholder/200/200" alt="Tony Prem">
+                    </div>
+                    <div class="team-name">Tony Prem</div>
+                    <div class="team-role">Owner & Master Technician</div>
+                    <p>With over 40 years of experience, Tony continues to oversee operations and ensure that every vehicle receives the highest standard of service.</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-image">
+                        <img src="/api/placeholder/200/200" alt="Michael Rodriguez">
+                    </div>
+                    <div class="team-name">Michael Rodriguez</div>
+                    <div class="team-role">Service Manager</div>
+                    <p>Michael has been with us for 15 years and coordinates all service operations, ensuring efficient and quality work on every vehicle.</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-image">
+                        <img src="/api/placeholder/200/200" alt="Sarah Johnson">
+                    </div>
+                    <div class="team-name">Sarah Johnson</div>
+                    <div class="team-role">Lead Technician</div>
+                    <p>ASE Master Certified with specializations in engine performance and electrical systems, Sarah tackles the most challenging diagnostic issues.</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-image">
+                        <img src="/api/placeholder/200/200" alt="David Chen">
+                    </div>
+                    <div class="team-name">David Chen</div>
+                    <div class="team-role">Customer Service Manager</div>
+                    <p>David ensures that every customer has an exceptional experience, from the first phone call to the final follow-up.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="certifications">
+        <div class="container">
+            <h2>Our Certifications & Affiliations</h2>
+            <p>We maintain the highest standards through professional certifications and continuous education</p>
+            
+            <div class="cert-logos">
+                <div class="cert-logo">
+                    <p>ASE Certified</p>
+                </div>
+                <div class="cert-logo">
+                    <p>AAA Approved</p>
+                </div>
+                <div class="cert-logo">
+                    <p>NAPA AutoCare</p>
+                </div>
+                <div class="cert-logo">
+                    <p>Better Business Bureau A+ Rating</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Experience the Tony Prem Difference</h2>
+            <p>Whether it's routine maintenance or complex repairs, our team is ready to provide the quality service you deserve. Contact us today to schedule an appointment or to learn more about how we can help with your automotive needs.</p>
+            <a href="contact.html" class="btn">Contact Us Today</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services.html">Oil Change</a></li>
+                        <li><a href="services.html">Brake Repair</a></li>
+                        <li><a href="services.html">Engine Diagnostics</a></li>
+                        <li><a href="services.html">Tire Services</a></li>
+                        <li><a href="services.html">AC Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li>123 Auto Service Road</li>
+                        <li>Anytown, ST 12345</li>
+                        <li>(555) 123-4567</li>
+                        <li>info@tonypremservicestation.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Tony Prem Service Station. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
